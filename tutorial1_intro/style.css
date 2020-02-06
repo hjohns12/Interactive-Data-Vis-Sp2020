@@ -1,0 +1,49 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 1em;
+  }
+  
+  section {
+    padding: 1em 0;
+  }
+  
+  table {
+    border-collapse: collapse;
+  }
+  
+  th {
+    padding: 0 0.5em;
+    color: #D9328E;
+    background-color: blue;
+    font-size: 30px;
+  }
+  
+  tr {
+    border-bottom: solid 1px #d3d3d3;
+    line-height: 1.75;
+  }
+  
+  td {
+    text-align: right;
+    padding: 0 0.5em;
+    color: blue;
+    background-color: #F2858E;
+  }
+  
+  .high {
+    background-color: #F244D5;
+  }
+
+  .column-names {
+      font-weight: bold; 
+
+  }
+
+  #warm-out {
+      background-color: #F2C5BB;
+      opacity: .7;
+  }
+
+  #nice-day {
+      background-color: #F2C5BB;
+  }
