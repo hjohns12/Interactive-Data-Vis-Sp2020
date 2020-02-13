@@ -12,7 +12,19 @@ dat$year <- year(dat$full_date)
 skim(dat)
 
 dat_agg <- dat %>%
+  group_by(day) %>%
+  summarise(daily_peds = sum(Pedestrians)) %>%
+  ungroup() %>%
+  mutate(mon_year = paste0(substr(day, 1, 3), 
+                           substr(day, 9, 10))) %>%
   group_by(mon_year) %>%
+  summarise(avg_peds = mean(daily_peds),
+            tot_peds = sum(daily_peds),
+            sd_peds = sd(daily_peds))
+  
+  
+  
+  group_by(day, mon_year) %>%
   summarise(avg_peds = mean(Pedestrians),
             tot_peds = sum(Pedestrians),
             sd_peds = sd(Pedestrians),
