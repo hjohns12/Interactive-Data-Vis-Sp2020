@@ -1,6 +1,6 @@
 var format = d3.format(",.0f");
 
-d3.csv("../../data/peds_agg.csv", d3.autoType).then(data => {
+d3.csv("../data/peds_agg.csv", d3.autoType).then(data => {
     console.log(data);
 
 const width = window.innerWidth * 0.8,
