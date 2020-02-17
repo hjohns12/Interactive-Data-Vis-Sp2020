@@ -20,14 +20,7 @@ dat_agg <- dat %>%
   group_by(mon_year) %>%
   summarise(avg_peds = mean(daily_peds),
             tot_peds = sum(daily_peds),
-            sd_peds = sd(daily_peds))
-  
-  
-  
-  group_by(day, mon_year) %>%
-  summarise(avg_peds = mean(Pedestrians),
-            tot_peds = sum(Pedestrians),
-            sd_peds = sd(Pedestrians),
-            n_obs = n()) 
+            sd_peds = sd(daily_peds),
+            n_obs = n())
 
 write.csv(dat_agg, "~/personal/Interactive-Data-Vis-Sp2020/data/peds_agg.csv")
