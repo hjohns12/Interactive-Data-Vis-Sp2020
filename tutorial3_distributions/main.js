@@ -67,7 +67,7 @@ function init() {
     .attr('class', 'axis-label')
     .attr('x', '50%')
     .attr('dy', '3em')
-    .text("Number of walkers (per day)");
+    .text("Number of daily walkers");
   
   svg 
     .append("g")
@@ -79,7 +79,7 @@ function init() {
     .attr('y', '50%')
     .attr('dx', '-3em')
     .attr('writing-mode', 'vertical-rl')
-    .text("Temperature");
+    .text("Temperature (F)");
   
   draw();
 }
@@ -100,7 +100,7 @@ function draw() {
         enter 
         .append("circle")
         .attr('class', 'dot')
-        .attr('stroke', 'green')
+        .attr('stroke', 'black')
         .attr('opacity', 0.4)
         .attr('fill', d => {
           if (d.direction === "Towards Manhattan") return "pink";

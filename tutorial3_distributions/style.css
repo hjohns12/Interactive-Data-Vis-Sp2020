@@ -17,4 +17,22 @@ body {
     text-anchor: middle;
   }
   
+  h2 {
+    color: blue;
+    background-color: #F2858E;
+  }
   
+  h1 {
+    color: #D9328E;
+    background-color: blue;
+  }
+
+ label {
+  background-color: #F2C5BB;
+  color: blue;
+  }
+
+  select {
+    background-color: blue;
+    color: #F2C5BB;
+  }
