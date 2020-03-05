@@ -1,0 +1,19 @@
+body {
+    /* ref: https://fonts.google.com/specimen/Source+Sans+Pro?selection.family=Source+Sans+Pro */
+    font-family: "Source Sans Pro", sans-serif;
+    padding: 1em 3em;
+  }
+  
+  #tooltip {
+    display: block;
+    height: 50px;
+  }
+  
+  path.state {
+    stroke: black;
+  }
+
+  text {
+    display: block;
+    white-space: nowrap;
+  }
