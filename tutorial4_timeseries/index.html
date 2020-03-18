@@ -1,14 +1,22 @@
 <!DOCTYPE html>
   <head>
     <meta charset="utf-8">
-    <title>Interactive Data Visualization Tutorial</title>
+    <title>Week 4</title>
     <link rel="stylesheet" href="./style.css">
+
+    <h1>Interactive Data Visualization – Tutorial 4</h1>
+    <!-- data source: http://www.electproject.org/home/voter-turnout/demographics -->
   </head>
   <body>
-    Welcome to Interactive Data Visualization Tutorials
-    <label for="dropdown">Filter Selection</label>
+    <label for="dropdown">Select an age group</label>
     <select id="dropdown" name="dropdown"></select>
     <script src="../lib/d3.js"></script>
+
     <script src="main.js"></script>
+    <div id="legend-container"> </div>
+    <div id="d3-container"> </div>
+
+    <b>Data source:</b> <a href="http://www.electproject.org/home/voter-turnout/demographics">United States Elections Project</a>, 2018.
+    <br><b>Code:</b> <a href="https://github.com/hjohns12/Interactive-Data-Vis-Sp2020/tree/master/tutorial3_distributions">GitHub repo</a>. 
   </body>
 </html>
