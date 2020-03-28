@@ -1,3 +1,11 @@
+/* to do: add scroll bar to table without header moving */
+
+table tbody 
+{
+   overflow: auto;
+   height: 1000px;
+}
+
 body {
     font-family: 'Source Sans Pro', sans-serif;
     padding: 1em;
@@ -36,7 +44,6 @@ body {
 
   .column-names {
       font-weight: bold; 
-
   }
 
   #warm-out {
@@ -47,3 +54,10 @@ body {
   #nice-day {
       background-color: #F2C5BB;
   }
+
+  .container{
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  
