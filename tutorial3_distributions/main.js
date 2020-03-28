@@ -107,11 +107,13 @@ function draw() {
           else return "purple";
         })
         .attr("r", radius)
-        .attr("cy", d => yScale(d.temperature))
-        .attr("cx", d => margin.bottom)
+        .attr("cy", d => height)
+        .attr("cx", d => margin.top) 
         .call(enter => enter
           .transition()
+          .delay(500)
           .attr("cx", d => xScale(d.count))
+          .attr("cy", d => yScale(d.temperature))
         ),
     update => 
       update.call(update => 
@@ -119,13 +121,17 @@ function draw() {
         .transition()
         .duration(250)
         .attr("stroke", "green")
+        .transition()
+        .duration(250)
+        .attr("stroke", "black")
         ),
     exit => 
         exit.call(exit => 
           exit
           .transition()
-          .duration(10000)
-          .attr("cx", height)
+          .delay(1000)
+          .duration(500)
+          .attr("opacity", 0)
           .remove()
           )
     );
