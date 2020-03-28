@@ -101,7 +101,7 @@ function draw() {
         .append("circle")
         .attr('class', 'dot')
         .attr('stroke', 'black')
-        .attr('opacity', 0.4)
+        .attr('opacity', 0.2)
         .attr('fill', d => {
           if (d.direction === "Towards Manhattan") return "pink";
           else return "purple";
@@ -114,24 +114,23 @@ function draw() {
           .delay(500)
           .attr("cx", d => xScale(d.count))
           .attr("cy", d => yScale(d.temperature))
+          .attr("opacity", 0.6)
         ),
     update => 
       update.call(update => 
         update
         .transition()
-        .duration(250)
-        .attr("stroke", "green")
-        .transition()
-        .duration(250)
+        .duration(50)
         .attr("stroke", "black")
         ),
     exit => 
         exit.call(exit => 
           exit
           .transition()
-          .delay(1000)
+          .attr("opacity", 1)
+          .delay(700)
           .duration(500)
-          .attr("opacity", 0)
+          .attr("opacity", .2)
           .remove()
           )
     );
