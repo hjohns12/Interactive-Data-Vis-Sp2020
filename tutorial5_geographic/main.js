@@ -14,10 +14,10 @@ let state = {
   geojson: null,
   extremes: null,
   hover: {
-    latitude: null,
-    longitude: null,
-    state: null,
-    changeDays: null,
+    State: null,
+    Latitude: null,
+    Longitude: null,
+    'Change in unusually hot days': null,
   },
 };
 
@@ -59,7 +59,7 @@ function init() {
     .attr("class", "state")
     .attr("fill", "transparent")
     .on("mouseover", d => {
-      state.hover["state"] = d.properties.NAME;
+      state.hover["State"] = d.properties.NAME;
       draw();
     });
 
@@ -87,7 +87,7 @@ function init() {
     .attr("changeDays", function(d) {
       return d["Change in 95 percent Days"]})
     .on("mouseover", d => {
-      state.hover["changeDays"] = formatNumber(d["Change in 95 percent Days"]);
+      state.hover["Change in unusually hot days"] = formatNumber(d["Change in 95 percent Days"]);
       draw();
     })
 
@@ -97,37 +97,14 @@ function init() {
     const [mx, my] = d3.mouse(svg.node());
     // projection can be inverted to return [lat, long] from [x, y] in pixels
     const proj = projection.invert([mx, my]);
-    state.hover["longitude"] = proj[0];
-    state.hover["latitude"] = proj[1];
+    state.hover["Longitude"] = proj[0];
+    state.hover["Latitude"] = proj[1];
     draw();
   });
-
-  // const onePoint = svg
-  //   .append("circle")
-  //   .attr("fill", "lightblue")
-  //   .attr("r", 10)
-  //   .attr("stroke", "black")
-  //   .attr("transform", "translate(11,20)")
-
-  // const twoPoint = svg
-  //   .append("circle")
-  //   .attr("fill", "orange")
-  //   .attr("r", 10)
-  //   .attr("stroke", "black")
-  //   .attr("transform", "translate(11,50)")
-  
-  // legendText = d3.select("#legend-container")
-  //   .append("text")
-  //   .text("   Orange points show where these unusually hot days are becoming more common.")
-
 
   draw(); // calls the draw function
 }
 
-/**
- * DRAW FUNCTION
- * we call this everytime there is an update to the data/state
- * */
 function draw() {
   hoverData = Object.entries(state.hover);
   console.log(hoverData);
